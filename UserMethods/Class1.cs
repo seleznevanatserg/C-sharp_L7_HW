@@ -5,7 +5,7 @@ public class Method
     {
         bool isParsed = int.TryParse(Console.ReadLine(), out int number);
         if (isParsed) return number;
-        else return 0;
+        else return -1;
     }
      public static uint InputUIntNumberTryParse() // enter number type uint
     {
@@ -18,7 +18,7 @@ public class Method
     {
         bool isParsed = double.TryParse(Console.ReadLine(), out double number);
         if (isParsed) return number;
-        else return 0;
+        else return -1;
     }
 
     public static int[] CreatedArrayUserEntered(int enteredNumber) // create 1d array with using enter
@@ -66,13 +66,22 @@ public class Method
         Console.WriteLine();
     }
 
+    public static void PrintArray(double[] array) // Print 1d array with datatype DOUBLE
+    {
+        for (var i = 0; i < array.Length; i++)
+        {
+            Console.Write($"[{array[i]}] " + "\t");
+        }
+        Console.WriteLine();
+    }
+
     public static void Print2dArray(int[,] array) // Print 2d array
     {
         for (int i = 0; i < array.GetLength(0); i++)
         {
             for (int j = 0; j < array.GetLength(1); j++)
             {
-                Console.Write($"[{array[i, j]}] ");
+                Console.Write($"[{array[i, j]}] " + "\t");
             }
             Console.WriteLine();
         }
@@ -84,7 +93,7 @@ public class Method
         {
             for (int j = 0; j < array.GetLength(1); j++)
             {
-                Console.Write($"[{array[i, j]}] ");
+                Console.Write($"[{array[i, j]}] " + "\t");
             }
             Console.WriteLine();
         }
